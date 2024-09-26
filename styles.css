@@ -1,0 +1,572 @@
+/* General styles */
+body {
+    font-family: 'Dancing Script', cursive, sans-serif;
+    background-color: #ffe0e6;
+    margin: 0;
+    padding: 0;
+}
+
+/* Header styles */
+header {
+    background: linear-gradient(135deg, rgba(250, 128, 114, 0.8), rgba(255, 182, 193, 0.8)); /* Soft gradient inspired by Taylor Swift's album colors */
+    color: #fff;
+    padding: 20px 0;
+    text-align: center;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    position: relative;
+    overflow: hidden;
+    border-bottom: 2px solid #f0fe32; /* Light border */
+}
+
+header::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 200%;
+    height: 100%;
+    background: linear-gradient(120deg, transparent, rgba(255, 255, 255, 0.4), transparent);
+    animation: shine 2s infinite;
+}
+
+@keyframes shine {
+    to {
+        left: 100%;
+    }
+}
+
+header h1 {
+    position: relative;
+    font-size: 5.0em;
+    margin: 0;
+    font-family: 'Dancing Script', cursive; /* Elegant font */
+    color: #31d3fc; /* Soft pink color */
+    animation: textShadow 1.5s infinite;
+    text-shadow: 0 0 5px #2eddf4, 0 0 10px #5ce9fc, 0 0 15px #53d0f9, 0 0 20px #69f3ff;
+}
+
+@keyframes textShadow {
+    0% {
+        text-shadow: 0 0 5px #ff69b4, 0 0 10px #ff69b4, 0 0 15px #ff69b4, 0 0 20px #ff69b4;
+    }
+    50% {
+        text-shadow: 0 0 10px #ff69b4, 0 0 20px #ff69b4, 0 0 30px #ff69b4, 0 0 40px #ff69b4;
+    }
+    100% {
+        text-shadow: 0 0 5px #ff69b4, 0 0 10px #ff69b4, 0 0 15px #ff69b4, 0 0 20px #ff69b4;
+    }
+}
+
+nav ul {
+    list-style: none;
+    padding: 0;
+    margin: 10px;
+    display: flex;
+    justify-content: center;
+}
+
+nav ul li {
+    margin: 0 15px;
+}
+
+nav ul li a {
+    color: #ff69b4;
+    text-decoration: none;
+    font-weight: bold;
+    transition: color 0.3s ease;
+    font-family: 'Dancing Script', cursive; /* Elegant font */
+    font-size: 1.5em; /* Adjusted font size */
+}
+
+nav ul li a:hover {
+    color: #ff1493; /* Darker pink on hover */
+    text-shadow: 0 0 5px #ff1493, 0 0 10px #ff1493; /* Subtle hover effect */
+}
+
+/* Resume Link Styles */
+nav ul li a.resume-link {
+    background: #ff1493;
+    color: #fff;
+    padding: 5px 15px;
+    border-radius: 20px;
+    font-size: 1.5em; /* Adjusted font size */
+    transition: background 0.3s ease, color 0.3s ease;
+}
+
+nav ul li a.resume-link:hover {
+    background: #ff69b4;
+    color: #fff;
+}
+
+/* Additional unique elements for Taylor Swift fan */
+header::after {
+    font-size: 2.5em;
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    animation: float 3s infinite ease-in-out;
+    opacity: 0.7;
+}
+
+@keyframes float {
+    0%, 100% {
+        transform: translateY(0);
+    }
+    50% {
+        transform: translateY(-10px);
+    }
+}
+
+
+
+/* Container Styles */
+.container {
+    background: rgba(233, 113, 137, 0.8); /* Semi-transparent light pink background */
+    padding: 20px;
+}
+
+/* Section Styles */
+section {
+    padding: 60px 20px;
+    max-width: 800px;
+    margin: 0 auto 20px; /* Added margin-bottom of 20px */
+    text-align: center;
+    background: rgba(74, 206, 227, 0.8); /* Semi-transparent background for readability */
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* Home Section Styles */
+#home {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background: linear-gradient(135deg, #74cce3, #e97189); /* Gradient background */
+    border-radius: 15px;
+    padding: 40px;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+    transition: transform 0.3s ease-in-out;
+    position: relative;
+    overflow: hidden;
+}
+
+#home:before {
+    content: '';
+    position: absolute;
+    top: -50%;
+    left: -50%;
+    width: 200%;
+    height: 200%;
+    background: radial-gradient(circle, rgba(255,255,255,0.15), rgba(255,255,255,0));
+    animation: rotate 6s linear infinite;
+}
+
+@keyframes rotate {
+    from {
+        transform: rotate(0deg);
+    }
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+#home:hover {
+    transform: scale(1.05); /* Scale up on hover */
+}
+
+/* Profile Picture Container Styles */
+#home .profile-pic-container {
+    display: flex;
+    justify-content: center; /* Center horizontally */
+    align-items: center; /* Center vertically */
+    width: 100%;
+    height: auto;
+    margin-bottom: 20px;
+}
+
+/* Profile Picture Styles */
+#home img.profile-pic {
+    width: 200px; /* Set fixed width */
+    height: 200px; /* Set fixed height */
+    object-fit: cover; /* Ensure the image covers the entire container */
+    border-radius: 50%; /* Make it a circle */
+    border: 4px solid #1c1a1b; /* Add border */
+    box-shadow: 0 4px 8px rgba(231, 6, 119, 0.1); /* Optional: Add shadow */
+    transition: transform 0.3s ease-in-out; /* Add transition for transform */
+    margin-right: 20px; /* Adjust margin to move image slightly to the right */
+}
+
+#home img.profile-pic:hover {
+    transform: scale(1.1); /* Scale up on hover */
+}
+
+/* Intro Text Styles */
+.intro-text {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    text-align: left;
+    max-width: 500px;
+    background: rgba(255, 255, 255, 0.8); /* Semi-transparent white background */
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+/* Heading and Paragraph Styles */
+#home h1, #home p {
+    font-style: italic;
+    font-synthesis: style;
+    font-size: 2.5em;
+    margin-top: 0;
+}
+
+h1 {
+    font-size: 3.3em; /* Adjust font size */
+    color: #d80b3b;
+    padding-top: 0;
+    margin-top: 0;
+    transition: color 0.3s ease-in-out;
+}
+
+h1:hover {
+    color: #ff416c; /* Change color on hover */
+}
+
+#home p {
+    font-size: 1.5em; /* Adjust font size */
+    color: #333;
+    transition: color 0.3s ease-in-out;
+}
+
+#home p:hover {
+    color: #555; /* Change color on hover */
+}
+
+
+/* About Me Section Styles */
+#about {
+    background: rgba(74, 206, 227, 0.8);
+    padding: 60px 20px;
+    max-width: 800px;
+    margin: 0 auto 20px auto; /* Added bottom margin for spacing */
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+#about:hover {
+    transform: scale(1.05);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+}
+
+#about h2 {
+    margin: 20px 0;
+    font-size: 3.3em;
+    color: #fa1616;
+    transition: color 0.3s;
+}
+
+#about h2:hover {
+    color: #d1290c;
+}
+
+#about p {
+    font-size: 1.5em;
+    color: #0b0808;
+    margin-bottom: 20px;
+}
+
+.skills, .hobbies {
+    background: #fff;
+    padding: 20px;
+    border-radius: 10px;
+    margin-top: 20px;
+    box-shadow: 0 4px 8px rgba(237, 2, 2, 0.816);
+    transition: transform 0.3s;
+}
+
+.skills:hover, .hobbies:hover {
+    transform: translateY(-10px);
+}
+
+.skills h3, .hobbies h3 {
+    margin-bottom: 10px;
+    font-size: 2em;
+    color: #f31010;
+}
+
+.skills ul, .hobbies ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+.skills li, .hobbies li {
+    font-size: 1.5em;
+    color: #090808;
+    margin-bottom: 10px;
+    transition: color 0.3s;
+}
+
+.skills li:hover, .hobbies li:hover {
+    color: #ff4b2b;
+}
+
+
+p,h3{
+    font-size: 2.5em;
+}
+
+
+
+img, video {
+    max-width: 100%;
+    height: auto;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* Styles for project items */
+.project-item {
+    background: #fff;
+    padding: 20px;
+    border-radius: 10px;
+    margin-bottom: 20px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s, box-shadow 0.3s;
+    text-align: center; /* Center align text and images */
+}
+
+.project-item:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+}
+
+/* Styles for project images */
+.project-item img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+    margin-bottom: 10px;
+}
+
+.project-item img:hover {
+    transform: scale(1.05);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+}
+
+/* Styles for project descriptions */
+.project-item p {
+    margin-top: 10px;
+    font-size: 1.5em;
+    color: #080707;
+}
+
+/* Styles for project links */
+.project-item a {
+    color: #ff416c;
+    text-decoration: none;
+    font-weight: bold;
+    transition: color 0.3s;
+    display: inline-block; /* Ensure the link wraps the image */
+}
+
+.project-item a:hover {
+    color: #ff4b2b;
+}
+
+/* General styles for sections */
+section {
+    padding: 60px 20px;
+    max-width: 800px;
+    margin: 0 auto;
+    text-align: center;
+    background: rgba(74, 206, 227, 0.8); /* Semi-transparent background for readability */
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    margin-bottom: 20px; /* Add space between sections */
+}
+
+/* Media query for larger screens */
+@media (min-width: 768px) {
+    .project-item {
+        margin: 20px auto;
+        max-width: 600px;
+    }
+}
+
+a {
+    color: #ff416c;
+    text-decoration: none;
+    font-weight: bold;
+    transition: color 0.3s;
+    font-size: 1em; /* Adjusted font size */
+}
+
+a:hover {
+    color: #ff4b2b;
+}
+
+
+@media (min-width: 768px) {
+    .project-item, .interest-item {
+        margin: 20px auto;
+        max-width: 600px;
+    }
+}
+
+#contact {
+    text-align: center;
+    padding: 60px 20px;
+    max-width: 800px;
+    margin: 0 auto;
+    background: rgba(74, 206, 227, 0.8); /* Semi-transparent background */
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.contact-box {
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s;
+}
+
+.contact-box:hover {
+    transform: translateY(-10px);
+}
+
+.contact-info {
+    margin-top: 20px;
+}
+
+.contact-info p {
+    font-size: 1.5em;
+    margin-bottom: 10px;
+}
+
+.contact-info a {
+    color: #ff416c;
+    text-decoration: none;
+    font-weight: bold;
+    transition: color 0.3s;
+}
+
+.contact-info a:hover {
+    color: #ff4b2b;
+}
+
+
+.interest-item {
+    background: #fff;
+    padding: 20px;
+    border-radius: 10px;
+    margin-bottom: 20px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s;
+    text-align: center;
+}
+
+.interest-item:hover {
+    transform: translateY(-10px);
+}
+
+.image-container {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    margin-top: 20px;
+}
+
+.image-box {
+    width: calc(50% - 20px);
+    margin-bottom: 20px;
+    padding: 10px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s;
+}
+
+.image-box:hover {
+    transform: scale(1.05);
+}
+
+.image-box img {
+    width: 100%;
+    height: auto;
+    border-radius: 10px;
+    filter: brightness(85%) contrast(100%) saturate(100%);
+    transition: filter 0.3s ease-in-out;
+}
+
+.image-box:hover img {
+    filter: brightness(100%) contrast(100%) saturate(100%);
+}
+
+.image-box p {
+    margin-top: 10px;
+    font-size: 1.5em;
+    color: #161212;
+}
+
+/* General styles for images and videos */
+img, video {
+    max-width: 100%;
+    height: auto;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* Styles for interest items */
+.interest-item {
+    background: linear-gradient(135deg, #f3f3f3, #ffffff);
+    padding: 20px;
+    border-radius: 10px;
+    margin-bottom: 20px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s, background 0.3s;
+    text-align: center;
+}
+
+.interest-item:hover {
+    transform: translateY(-10px);
+    background: linear-gradient(135deg, #e2e2e2, #f9f9f9);
+}
+
+/* Styles for the video container */
+.video-container {
+    display: inline-block;
+    padding: 10px;
+    border-radius: 15px;
+    border: 5px solid #ff69b4; /* Creative border color */
+    box-shadow: 0 8px 16px rgba(255, 105, 180, 0.3); /* Creative box shadow */
+    transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+    margin-bottom: 10px;
+}
+
+.video-container:hover {
+    transform: scale(1.05);
+    box-shadow: 0 12px 24px rgba(255, 105, 180, 0.4); /* Enhanced box shadow on hover */
+}
+
+/* Styles for text and links */
+p {
+    margin-top: 10px;
+    font-size: 1.5em;
+    color: #0d0b0b;
+}
+
+a {
+    color: #ff69b4;
+    text-decoration: none;
+    font-weight: bold;
+    transition: color 0.3s;
+}
+
+a:hover {
+    color: #f3310f;
+}
